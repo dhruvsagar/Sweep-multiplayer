@@ -1,0 +1,243 @@
+@charset "utf-8";
+/* CSS Document */
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: #00AFD4;
+    margin: 0;
+}
+
+.titleWrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.title {
+    font-size: 73px;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+
+.createGameWrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size : 29px;
+}
+
+.joinGameWrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size : 29px;
+    width: 25%;
+}
+
+#restart {
+    text-align: center;
+}
+
+#turnSummary {
+    text-align: center;
+}
+
+input[type="text"] {
+  display: inline-block;
+  margin: 4px;
+  width: 50%;
+  font-size: 18px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+}
+
+.style-4 input[type="text"] {
+  padding: 10px;
+  border: none;
+  border-bottom: solid 2px #c9c9c9;
+  transition: border 0.3s;
+}
+
+
+.info {
+    text-align: center;
+}
+
+#hand {
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    padding: 50px 0;
+}
+
+#stage {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    min-height: 212px;
+}
+
+.card {
+    display: inline-block;
+    width: 75px;
+    height: 112.5px;
+    font-size: 25px;
+    text-align: center;
+    padding: 30px 0;
+    line-height: 50px;
+    margin: 0 10px;
+    background: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all .3s;
+    opacity: .8;
+    bottom: 0;
+    position: relative;
+}
+
+#hand .card {
+    width: 100px;
+    height: 150px;
+    line-height: 90px;
+    font-size: 30px;
+    margin: 10px 5px;
+}
+
+.card.diamonds, .card.hearts {
+    color: red;
+}
+
+.card:hover {
+    box-shadow: 1px 1px 5px #555;
+    bottom: 5px;
+    opacity: .9;
+}
+
+.card.selected {
+    bottom: 10px;
+    transition: all .3s;
+    opacity: 1;
+}
+
+
+.hidden .card {
+    color: transparent;
+    background: url('img/pattern.png');
+    opacity: 1;
+}
+
+.button {
+    display: inline-block;
+    background: #FFF;
+    width: 150px;
+    margin: 0 5px;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    opacity: .8;
+    transition: all .3s;
+}
+
+.button:hover {
+    opacity: 1;
+}
+
+#action {
+    text-align: center;
+}
+
+.pile {
+    display: inline-block;
+    position: relative;
+    width: 75px;
+    height: 64.5px;
+    margin: 0 10px;
+    transition: all .3s;
+    bottom: 0;
+}
+
+.pile .card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    opacity: .4;
+}
+
+.pile .label {
+    z-index: 99;
+    opacity: .8;
+    transition: all .3s;
+    padding: 30px 5px;
+    line-height: normal;
+}
+
+.pile:hover .label {
+    top: -5px;
+    opacity: .9;
+    box-shadow: 1px 1px 5px #555;
+}
+
+.pile.selected {
+    transition: all .3s;
+    opacity: 1;
+}
+
+.pile.selected .label {
+    top: -10px;
+    opacity: 1;
+}
+
+.pile .label span {
+    display: block;
+    font-size: 12px;
+    margin: 5px 0;
+    opacity: .8;
+}
+
+.player .profile {
+    line-height: 30px;
+    vertical-align: top;
+    margin-left: 10px;
+    color: #333;
+    display: inline-block;
+}
+
+.player {
+    padding: 5px;
+    border-left: 5px solid transparent;
+    transition: all .3s;
+}
+
+.score {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #333;
+    text-align: center;
+    line-height: 30px;
+    color: #FFF;    
+}
+
+#players {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.player.current {
+    border-left: 5px solid #333;
+}
+

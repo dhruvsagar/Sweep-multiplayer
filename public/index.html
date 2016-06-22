@@ -1,0 +1,115 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href='https://fonts.googleapis.com/css?family=Quicksand:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="css/sweetalert.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        
+        <title>Sweep</title>
+    </head>
+    <body>
+        <div id = "gameArea">
+            <!-- This is where the templates defined below will be used -->
+        </div>
+
+            <!-- Main Title Screen that appears when the page loads for the first time -->
+        <script id="intro-screen-template" type="text/template">
+
+            <div class="titleWrapper">
+
+                <div class="title">
+                    Sweep
+                </div>
+
+                <div class="buttons">
+
+                    <div class = "button" id="btnCreateGame" class="btn left">CREATE</div>
+                    <div class = "button" id="btnJoinGame" class="btn right">JOIN</div>
+                    <div style="clear:both"></div>
+                </div>
+
+            </div>
+
+        </script>
+
+        <!-- This screen appears when a user clicks "CREATE" on the Title Screen -->
+        <script id="create-game-template" type="text/template">
+            <div class="createGameWrapper">
+
+                <div class="info" id = "hostNameInfo">
+                    <label for="hostName">Your Name:</label>
+                    <input id="hostName" type="text" />
+                </div>
+
+                <div class = "info">
+                    <div class = "button" id = "btnEnteredHostName" class = "btn">Accept</div>
+                </div>
+
+                <div class="info">Open this site on another device:</div>
+                <div id="gameURL" class="infoBig">Error!</div>
+
+                <div class="info">Then click <strong>JOIN</strong> and <br/> enter the following Game ID:</div>
+                <div id="spanNewGameCode" class="gameId">Error!</div>
+
+                <div id="playersWaiting"></div>
+            </div>
+        </script>
+        
+        <!-- This scrreen appears when a player clicks "JOIN" on the Title Screen -->
+        <script id="join-game-template" type="text/template">
+            <div class="joinGameWrapper">
+                <div class="info">
+                    <label for="inputPlayerName">Your Name:</label>
+                    <input id="inputPlayerName" type="text" />
+                </div>
+
+                <div class="info">
+                    <label for="inputGameId">Game ID:</label>
+                    <input id="inputGameId" type="text"/>
+                </div>
+
+                <div class="info buttons">
+                    <div class = "button" id="btnStart" class="btn">Start</div>
+                    <div id="playerWaitingMessage"></div>
+                </div>
+            </div>
+        </script>
+
+
+        <script id = "main-game-template" type="text/template">
+            <div id="stage"></div>
+            <div id="hand"></div>
+            <div id="action">
+                <div class="button" id="pileBtn" >Make Pile</div>
+                <div class="button" id="pickBtn" >Pick Up Pile</div>
+                <div class="button" id="selectBtn">Select Card</div>
+                <div class="button" id="nextPlayer" onclick="confirmPlayer()">Next Player</div>
+            </div>
+            <div id="players">
+                <div class="player" id="player1">
+                    <span class="score"></span>
+                    <div class="profile"></div>                    
+                </div>
+                <div class="player" id="player0">
+                    <span class="score"></span>
+                    <div class="profile"></div>
+                </div>
+            </div>
+            <div id="restart" style="display:none;">
+                <div class="button" id="restartBtn">Restart</div>
+                <div class="button" id="newGameBtn">New Game</div>
+            </div>
+            <div id = "turnSummary"></div>
+        </script>
+
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="jquery-1.11.3.js"></script>
+        <script src="game.js"></script>
+        <!--<script src="script.js"></script>-->
+        <script src="app.js"></script>
+        <script src="js/sweetalert.min.js"></script>
+
+    </body>
+</html>
