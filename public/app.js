@@ -2,11 +2,6 @@
 var appi;
 jQuery(function($){   
 
-    /**
-     * All the code relevant to Socket.IO is collected in the IO namespace.
-     *
-     * @type {{init: Function, bindEvents: Function, onConnected: Function, onNewGameCreated: Function, playerJoinedRoom: Function, beginNewGame: Function, onNewWordData: Function, hostCheckAnswer: Function, gameOver: Function, error: Function}}
-     */
     var IO = {
 
         /**
@@ -14,9 +9,7 @@ jQuery(function($){
          * to the Socket.IO server
          */
         init: function() {
-            console.log("done0");
             IO.socket = io.connect();
-            console.log("done1");
             IO.bindEvents();
         },
 
@@ -515,9 +508,7 @@ jQuery(function($){
                 console.log("is this happening!");
             },
 
-            /**
-             * Show the countdown screen
-             */
+            
             gameCountdown : function() {
 
                 // Prepare the game screen with new HTML
@@ -529,10 +520,6 @@ jQuery(function($){
 
                 $('#player0 .profile')
                     .html(App.Host.opponentName);
-                // Set the Score section on screen to 0 for each player.
-                /*$('#player1Score').find('.score').attr('id',App.Host.players[0].mySocketId);
-                $('#player2Score').find('.score').attr('id',App.Host.players[1].mySocketId);
-                */
 
                 //IO.socket.emit("hostCountdownFinished", App.gameId);
                 App.Host.scriptStarted();

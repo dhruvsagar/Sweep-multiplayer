@@ -113,18 +113,12 @@ function playerJoinGame(data) {
     }
 }
 
-/**
- * A player has tapped a word in the word list.
- * @param data gameId
- */
+
 function quitGameRequested(gameId) {
     io.sockets.in(data.gameId).emit('initiateQuitGame');
 }
 
-/**
- * The game is over, and a player has clicked a button to restart the game.
- * @param data
- */
+
 function restartRequested(gameId) {
    io.sockets.in(gameId).emit('restart');
 }
